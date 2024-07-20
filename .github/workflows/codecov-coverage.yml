@@ -5,6 +5,9 @@ permissions:
   contents: read
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - 'polkadot-v1.10.0-coverage'
 
 jobs:
   coverage:

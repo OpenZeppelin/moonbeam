@@ -56,6 +56,9 @@ jobs:
       - name: Install cargo-llvm-cov
         uses: taiki-e/install-action@cargo-llvm-cov
 
+      - name: Install nextest
+        uses: taiki-e/install-action@nextest
+
       - name: Install protoc
         uses: arduino/setup-protoc@v3
 
@@ -66,7 +69,7 @@ jobs:
       - name: cargo llvm-cov
         # Follow the test command in `coverage.yml`
         # but without release mode to avoid long build times
-        run: cargo llvm-cov --workspace --features=evm-tracing --lcov --output-path lcov.info
+        run: cargo llvm-cov nextest --release --workspace --features=evm-tracing --lcov --output-path lcov.info
 
       - name: Record Rust version
         run: echo "RUST=$(rustc --version)" >> "$GITHUB_ENV"

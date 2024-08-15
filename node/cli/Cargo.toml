@@ -29,7 +29,7 @@ sp-io = { workspace = true }
 sp-runtime = { workspace = true, features = ["std"] }
 sp-wasm-interface = { workspace = true }
 substrate-prometheus-endpoint = { workspace = true }
-try-runtime-cli = { workspace = true, optional = true }
+#try-runtime-cli = { workspace = true, optional = true }
 
 # Cumulus / Nimbus
 cumulus-client-cli = { workspace = true }
@@ -66,7 +66,7 @@ runtime-benchmarks = [
 ]
 try-runtime = [
 	"moonbeam-service/try-runtime",
-	"try-runtime-cli/try-runtime",
+	#"try-runtime-cli/try-runtime",
 	"polkadot-service/try-runtime",
 ]
 

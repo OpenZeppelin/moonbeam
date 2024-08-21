@@ -9358,8 +9358,8 @@ dependencies = [
 
 [[package]]
 name = "orml-traits"
-version = "1.0.0"
-source = "git+https://github.com/ozgunozerk/open-runtime-module-library?branch=polkadot-stable2407-1#c64dc4147541060753917b63a330ec64e5cbb258"
+version = "0.10.0"
+source = "git+https://github.com/openzeppelin/open-runtime-module-library?branch=polkadot-stable2407-1#aafe9077c9ec61dd8b3a42e899ef8353b2b050c0"
 dependencies = [
  "frame-support 37.0.0",
  "impl-trait-for-tuples",
@@ -9378,8 +9378,8 @@ dependencies = [
 
 [[package]]
 name = "orml-utilities"
-version = "1.0.0"
-source = "git+https://github.com/ozgunozerk/open-runtime-module-library?branch=polkadot-stable2407-1#c64dc4147541060753917b63a330ec64e5cbb258"
+version = "0.10.0"
+source = "git+https://github.com/openzeppelin/open-runtime-module-library?branch=polkadot-stable2407-1#aafe9077c9ec61dd8b3a42e899ef8353b2b050c0"
 dependencies = [
  "frame-support 37.0.0",
  "parity-scale-codec",
@@ -9393,8 +9393,8 @@ dependencies = [
 
 [[package]]
 name = "orml-xcm-support"
-version = "1.0.0"
-source = "git+https://github.com/ozgunozerk/open-runtime-module-library?branch=polkadot-stable2407-1#c64dc4147541060753917b63a330ec64e5cbb258"
+version = "0.10.0"
+source = "git+https://github.com/openzeppelin/open-runtime-module-library?branch=polkadot-stable2407-1#aafe9077c9ec61dd8b3a42e899ef8353b2b050c0"
 dependencies = [
  "frame-support 37.0.0",
  "orml-traits",
@@ -9407,8 +9407,8 @@ dependencies = [
 
 [[package]]
 name = "orml-xtokens"
-version = "1.0.0"
-source = "git+https://github.com/ozgunozerk/open-runtime-module-library?branch=polkadot-stable2407-1#c64dc4147541060753917b63a330ec64e5cbb258"
+version = "0.10.0"
+source = "git+https://github.com/openzeppelin/open-runtime-module-library?branch=polkadot-stable2407-1#aafe9077c9ec61dd8b3a42e899ef8353b2b050c0"
 dependencies = [
  "frame-support 37.0.0",
  "frame-system 37.1.0",

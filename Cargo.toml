@@ -300,10 +300,9 @@ cumulus-relay-chain-minimal-node = { git = "https://github.com/paritytech/polkad
 cumulus-relay-chain-rpc-interface = { git = "https://github.com/paritytech/polkadot-sdk", tag = "polkadot-stable2407-1" }
 
 # Polkadot / XCM (wasm)
-orml-traits = { git = "https://github.com/ozgunozerk/open-runtime-module-library", branch = "polkadot-stable2407-1", default-features = false }
-# TODO: make above and then update below
-orml-xcm-support = { git = "https://github.com/ozgunozerk/open-runtime-module-library", branch = "polkadot-stable2407-1", default-features = false }
-orml-xtokens = { git = "https://github.com/ozgunozerk/open-runtime-module-library", branch = "polkadot-stable2407-1", default-features = false }
+orml-traits = { git = "https://github.com/openzeppelin/open-runtime-module-library", branch = "polkadot-stable2407-1", default-features = false }
+orml-xcm-support = { git = "https://github.com/openzeppelin/open-runtime-module-library", branch = "polkadot-stable2407-1", default-features = false }
+orml-xtokens = { git = "https://github.com/openzeppelin/open-runtime-module-library", branch = "polkadot-stable2407-1", default-features = false }
 pallet-xcm = { git = "https://github.com/paritytech/polkadot-sdk", default-features = false, tag = "polkadot-stable2407-1" }
 pallet-xcm-benchmarks = { git = "https://github.com/paritytech/polkadot-sdk", default-features = false, tag = "polkadot-stable2407-1" }
 polkadot-core-primitives = { git = "https://github.com/paritytech/polkadot-sdk", default-features = false, tag = "polkadot-stable2407-1" }

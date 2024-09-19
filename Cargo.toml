@@ -184,6 +184,7 @@ sp-runtime-interface = { git = "https://github.com/paritytech/polkadot-sdk", def
 sp-session = { git = "https://github.com/paritytech/polkadot-sdk", default-features = false, tag = "polkadot-stable2407-1" }
 sp-std = { git = "https://github.com/paritytech/polkadot-sdk", default-features = false, tag = "polkadot-stable2407-1" }
 sp-state-machine = { git = "https://github.com/paritytech/polkadot-sdk", default-features = false, tag = "polkadot-stable2407-1" }
+sp-tracing = { git = "https://github.com/moonbeam-foundation/polkadot-sdk", branch = "moonbeam-polkadot-stable2407-1", default-features = false }
 sp-transaction-pool = { git = "https://github.com/paritytech/polkadot-sdk", default-features = false, tag = "polkadot-stable2407-1" }
 sp-trie = { git = "https://github.com/paritytech/polkadot-sdk", default-features = false, tag = "polkadot-stable2407-1" }
 sp-version = { git = "https://github.com/paritytech/polkadot-sdk", default-features = false, tag = "polkadot-stable2407-1" }
@@ -314,6 +315,7 @@ polkadot-runtime-parachains = { git = "https://github.com/paritytech/polkadot-sd
 xcm = { package = "staging-xcm", git = "https://github.com/paritytech/polkadot-sdk", default-features = false, tag = "polkadot-stable2407-1" }
 xcm-builder = { package = "staging-xcm-builder", git = "https://github.com/paritytech/polkadot-sdk", default-features = false, tag = "polkadot-stable2407-1" }
 xcm-executor = { package = "staging-xcm-executor", git = "https://github.com/paritytech/polkadot-sdk", default-features = false, tag = "polkadot-stable2407-1" }
+xcm-runtime-apis = { git = "https://github.com/moonbeam-foundation/polkadot-sdk", branch = "moonbeam-polkadot-stable2407-1", default-features = false }
 
 # Polkadot / XCM (client)
 kusama-runtime = { package = "staging-kusama-runtime", git = "https://github.com/paritytech/polkadot-sdk", tag = "polkadot-stable2407-1" }

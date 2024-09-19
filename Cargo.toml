@@ -18,6 +18,7 @@ members = [
 	"pallets/precompile-benchmarks",
 	"pallets/proxy-genesis-companion",
 	"pallets/xcm-transactor",
+	"pallets/xcm-weight-trader",
 	"precompiles/balances-erc20",
 	"precompiles/batch",
 	"precompiles/call-permit",
@@ -105,6 +106,7 @@ pallet-precompile-benchmarks = { path = "pallets/precompile-benchmarks", default
 pallet-proxy-genesis-companion = { path = "pallets/proxy-genesis-companion", default-features = false }
 pallet-xcm-transactor = { path = "pallets/xcm-transactor", default-features = false }
 pallet-moonbeam-lazy-migrations = { path = "pallets/moonbeam-lazy-migrations", default-features = false }
+pallet-xcm-weight-trader = { path = "pallets/xcm-weight-trader", default-features = false }
 precompile-utils = { path = "precompiles/utils", default-features = false }
 xcm-primitives = { path = "primitives/xcm", default-features = false }
 

@@ -3451,14 +3451,15 @@ dependencies = [
 [[package]]
 name = "evm"
 version = "0.41.1"
-source = "git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2#5ebf882aa99ba449ecf01ba3c29a00ab05cffb17"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "767f43e9630cc36cf8ff2777cbb0121b055f0d1fd6eaaa13b46a1808f0d0e7e9"
 dependencies = [
  "auto_impl",
  "environmental",
  "ethereum",
- "evm-core",
- "evm-gasometer",
- "evm-runtime",
+ "evm-core 0.41.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "evm-gasometer 0.41.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "evm-runtime 0.41.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "log",
  "parity-scale-codec",
  "primitive-types",
@@ -3466,6 +3467,38 @@ dependencies = [
  "scale-info",
  "serde",
  "sha3",
+]
+
+[[package]]
+name = "evm"
+version = "0.41.1"
+source = "git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2#5ebf882aa99ba449ecf01ba3c29a00ab05cffb17"
+dependencies = [
+ "auto_impl",
+ "environmental",
+ "ethereum",
+ "evm-core 0.41.0 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
+ "evm-gasometer 0.41.0 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
+ "evm-runtime 0.41.0 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
+ "log",
+ "parity-scale-codec",
+ "primitive-types",
+ "rlp",
+ "scale-info",
+ "serde",
+ "sha3",
+]
+
+[[package]]
+name = "evm-core"
+version = "0.41.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d1da6cedc5cedb4208e59467106db0d1f50db01b920920589f8e672c02fdc04f"
+dependencies = [
+ "parity-scale-codec",
+ "primitive-types",
+ "scale-info",
+ "serde",
 ]
 
 [[package]]
@@ -3482,12 +3515,37 @@ dependencies = [
 [[package]]
 name = "evm-gasometer"
 version = "0.41.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1dc0eb591abc5cd7b05bef6a036c2bb6c66ab6c5e0c5ce94bfe377ab670b1fd7"
+dependencies = [
+ "environmental",
+ "evm-core 0.41.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "evm-runtime 0.41.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "primitive-types",
+]
+
+[[package]]
+name = "evm-gasometer"
+version = "0.41.0"
 source = "git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2#5ebf882aa99ba449ecf01ba3c29a00ab05cffb17"
 dependencies = [
  "environmental",
- "evm-core",
- "evm-runtime",
+ "evm-core 0.41.0 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
+ "evm-runtime 0.41.0 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
  "primitive-types",
+]
+
+[[package]]
+name = "evm-runtime"
+version = "0.41.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "84bbe09b64ae13a29514048c1bb6fda6374ac0b4f6a1f15a443348ab88ef42cd"
+dependencies = [
+ "auto_impl",
+ "environmental",
+ "evm-core 0.41.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "primitive-types",
+ "sha3",
 ]
 
 [[package]]
@@ -3497,7 +3555,7 @@ source = "git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkado
 dependencies = [
  "auto_impl",
  "environmental",
- "evm-core",
+ "evm-core 0.41.0 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
  "primitive-types",
  "sha3",
 ]
@@ -3509,9 +3567,9 @@ dependencies = [
  "environmental",
  "ethereum",
  "ethereum-types",
- "evm",
- "evm-gasometer",
- "evm-runtime",
+ "evm 0.41.1 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
+ "evm-gasometer 0.41.0 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
+ "evm-runtime 0.41.0 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
  "parity-scale-codec",
  "sp-runtime-interface 28.0.0",
 ]
@@ -3723,12 +3781,12 @@ source = "git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-po
 dependencies = [
  "ethereum",
  "ethereum-types",
- "evm",
+ "evm 0.41.1 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
  "fc-api",
  "fc-mapping-sync",
  "fc-rpc-core",
  "fc-storage",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2)",
  "fp-rpc",
  "fp-storage",
  "futures 0.3.30",
@@ -3736,7 +3794,7 @@ dependencies = [
  "jsonrpsee 0.20.3",
  "libsecp256k1",
  "log",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2)",
  "parity-scale-codec",
  "prometheus",
  "rand 0.8.5",
@@ -4029,6 +4087,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "fp-account"
+version = "1.0.0-dev"
+source = "git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1#1221dba057cb78337f7a20339514841a64a54b6d"
+dependencies = [
+ "hex",
+ "impl-serde 0.4.0",
+ "libsecp256k1",
+ "log",
+ "parity-scale-codec",
+ "scale-info",
+ "serde",
+ "sp-core 34.0.0",
+ "sp-io 38.0.0",
+ "sp-runtime 39.0.0",
+ "sp-runtime-interface 28.0.0",
+ "staging-xcm 14.1.0",
+]
+
+[[package]]
 name = "fp-consensus"
 version = "2.0.0-dev"
 source = "git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2#7f424fb9fc1ca9158a59be54cb183beaff9f799a"
@@ -4047,7 +4124,7 @@ source = "git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-po
 dependencies = [
  "ethereum",
  "ethereum-types",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2)",
  "frame-support 28.0.0",
  "parity-scale-codec",
  "sp-std 14.0.0 (git+https://github.com/moonbeam-foundation/polkadot-sdk?branch=moonbeam-polkadot-v1.7.2)",
@@ -4058,7 +4135,7 @@ name = "fp-evm"
 version = "3.0.0-dev"
 source = "git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2#7f424fb9fc1ca9158a59be54cb183beaff9f799a"
 dependencies = [
- "evm",
+ "evm 0.41.1 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
  "frame-support 28.0.0",
  "num_enum 0.7.3",
  "parity-scale-codec",
@@ -4070,13 +4147,28 @@ dependencies = [
 ]
 
 [[package]]
+name = "fp-evm"
+version = "3.0.0-dev"
+source = "git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1#1221dba057cb78337f7a20339514841a64a54b6d"
+dependencies = [
+ "evm 0.41.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "frame-support 37.0.0",
+ "num_enum 0.7.3",
+ "parity-scale-codec",
+ "scale-info",
+ "serde",
+ "sp-core 34.0.0",
+ "sp-runtime 39.0.0",
+]
+
+[[package]]
 name = "fp-rpc"
 version = "3.0.0-dev"
 source = "git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2#7f424fb9fc1ca9158a59be54cb183beaff9f799a"
 dependencies = [
  "ethereum",
  "ethereum-types",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2)",
  "parity-scale-codec",
  "scale-info",
  "sp-api 26.0.0",
@@ -7496,7 +7588,7 @@ dependencies = [
  "cumulus-test-relay-sproof-builder 0.15.0",
  "ethereum",
  "evm-tracing-events",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "fp-rpc",
  "fp-self-contained",
  "frame-benchmarking 37.0.0",
@@ -7536,7 +7628,7 @@ dependencies = [
  "pallet-erc20-xcm-bridge",
  "pallet-ethereum",
  "pallet-ethereum-xcm",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-evm-chain-id",
  "pallet-evm-precompile-author-mapping",
  "pallet-evm-precompile-balances-erc20",
@@ -7735,13 +7827,13 @@ name = "moonbeam-evm-tracer"
 version = "0.1.0"
 dependencies = [
  "ethereum-types",
- "evm",
- "evm-gasometer",
- "evm-runtime",
+ "evm 0.41.1 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
+ "evm-gasometer 0.41.0 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
+ "evm-runtime 0.41.0 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
  "evm-tracing-events",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "moonbeam-primitives-ext",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "parity-scale-codec",
  "sp-core 34.0.0",
  "sp-io 38.0.0",
@@ -7989,7 +8081,7 @@ dependencies = [
  "cumulus-test-relay-sproof-builder 0.15.0",
  "ethereum",
  "evm-tracing-events",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "fp-rpc",
  "fp-self-contained",
  "frame-benchmarking 37.0.0",
@@ -8028,7 +8120,7 @@ dependencies = [
  "pallet-erc20-xcm-bridge",
  "pallet-ethereum",
  "pallet-ethereum-xcm",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-evm-chain-id",
  "pallet-evm-precompile-author-mapping",
  "pallet-evm-precompile-balances-erc20",
@@ -8132,7 +8224,7 @@ dependencies = [
  "cumulus-pallet-parachain-system",
  "cumulus-pallet-xcmp-queue",
  "fp-ethereum",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-benchmarking 37.0.0",
  "frame-support 37.0.0",
  "frame-system 37.1.0",
@@ -8154,7 +8246,7 @@ dependencies = [
  "pallet-conviction-voting",
  "pallet-crowdloan-rewards",
  "pallet-ethereum-xcm",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-evm-chain-id",
  "pallet-identity",
  "pallet-migrations",
@@ -8390,7 +8482,7 @@ dependencies = [
  "cumulus-test-relay-sproof-builder 0.15.0",
  "ethereum",
  "evm-tracing-events",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "fp-rpc",
  "fp-self-contained",
  "frame-benchmarking 37.0.0",
@@ -8429,7 +8521,7 @@ dependencies = [
  "pallet-erc20-xcm-bridge",
  "pallet-ethereum",
  "pallet-ethereum-xcm",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-evm-chain-id",
  "pallet-evm-precompile-author-mapping",
  "pallet-evm-precompile-balances-erc20",
@@ -10044,12 +10136,12 @@ version = "1.0.0"
 dependencies = [
  "environmental",
  "ethereum-types",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-support 37.0.0",
  "frame-system 37.1.0",
  "log",
  "pallet-balances 38.0.0",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-timestamp 36.0.0",
  "parity-scale-codec",
  "scale-info",
@@ -10070,15 +10162,15 @@ dependencies = [
  "environmental",
  "ethereum",
  "ethereum-types",
- "evm",
+ "evm 0.41.1 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
  "fp-consensus",
  "fp-ethereum",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2)",
  "fp-rpc",
  "fp-storage",
  "frame-support 28.0.0",
  "frame-system 28.0.0",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2)",
  "parity-scale-codec",
  "scale-info",
  "sp-io 30.0.0",
@@ -10093,7 +10185,7 @@ dependencies = [
  "ethereum",
  "ethereum-types",
  "fp-ethereum",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "fp-rpc",
  "fp-self-contained",
  "frame-benchmarking 37.0.0",
@@ -10103,7 +10195,7 @@ dependencies = [
  "libsecp256k1",
  "pallet-balances 38.0.0",
  "pallet-ethereum",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-evm-precompile-proxy",
  "pallet-proxy",
  "pallet-timestamp 36.0.0",
@@ -10124,9 +10216,9 @@ version = "6.0.0-dev"
 source = "git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2#7f424fb9fc1ca9158a59be54cb183beaff9f799a"
 dependencies = [
  "environmental",
- "evm",
- "fp-account",
- "fp-evm",
+ "evm 0.41.1 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
+ "fp-account 1.0.0-dev (git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2)",
+ "fp-evm 3.0.0-dev (git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2)",
  "frame-benchmarking 28.0.0",
  "frame-support 28.0.0",
  "frame-system 28.0.0",
@@ -10145,6 +10237,29 @@ dependencies = [
 ]
 
 [[package]]
+name = "pallet-evm"
+version = "6.0.0-dev"
+source = "git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1#1221dba057cb78337f7a20339514841a64a54b6d"
+dependencies = [
+ "environmental",
+ "evm 0.41.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "fp-account 1.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
+ "frame-benchmarking 37.0.0",
+ "frame-support 37.0.0",
+ "frame-system 37.1.0",
+ "hash-db 0.16.0",
+ "hex-literal 0.4.1",
+ "impl-trait-for-tuples",
+ "log",
+ "parity-scale-codec",
+ "scale-info",
+ "sp-core 34.0.0",
+ "sp-io 38.0.0",
+ "sp-runtime 39.0.0",
+]
+
+[[package]]
 name = "pallet-evm-chain-id"
 version = "1.0.0-dev"
 source = "git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2#7f424fb9fc1ca9158a59be54cb183beaff9f799a"
@@ -10160,7 +10275,7 @@ name = "pallet-evm-precompile-author-mapping"
 version = "0.2.0"
 dependencies = [
  "derive_more",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-support 37.0.0",
  "frame-system 37.1.0",
  "hex-literal 0.3.4",
@@ -10169,7 +10284,7 @@ dependencies = [
  "num_enum 0.5.11",
  "pallet-author-mapping",
  "pallet-balances 38.0.0",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-scheduler",
  "pallet-timestamp 36.0.0",
  "parity-scale-codec",
@@ -10187,7 +10302,7 @@ name = "pallet-evm-precompile-balances-erc20"
 version = "0.1.0"
 dependencies = [
  "derive_more",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-support 37.0.0",
  "frame-system 37.1.0",
  "hex-literal 0.3.4",
@@ -10195,7 +10310,7 @@ dependencies = [
  "log",
  "num_enum 0.5.11",
  "pallet-balances 38.0.0",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-timestamp 36.0.0",
  "parity-scale-codec",
  "paste",
@@ -10215,15 +10330,15 @@ name = "pallet-evm-precompile-batch"
 version = "0.1.0"
 dependencies = [
  "derive_more",
- "evm",
- "fp-evm",
+ "evm 0.41.1 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-support 37.0.0",
  "frame-system 37.1.0",
  "hex-literal 0.3.4",
  "log",
  "num_enum 0.5.11",
  "pallet-balances 38.0.0",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-timestamp 36.0.0",
  "parity-scale-codec",
  "paste",
@@ -10243,7 +10358,7 @@ name = "pallet-evm-precompile-blake2"
 version = "2.0.0-dev"
 source = "git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2#7f424fb9fc1ca9158a59be54cb183beaff9f799a"
 dependencies = [
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2)",
 ]
 
 [[package]]
@@ -10251,7 +10366,7 @@ name = "pallet-evm-precompile-bn128"
 version = "2.0.0-dev"
 source = "git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2#7f424fb9fc1ca9158a59be54cb183beaff9f799a"
 dependencies = [
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2)",
  "sp-core 28.0.0",
  "substrate-bn",
 ]
@@ -10261,8 +10376,8 @@ name = "pallet-evm-precompile-call-permit"
 version = "0.1.0"
 dependencies = [
  "derive_more",
- "evm",
- "fp-evm",
+ "evm 0.41.1 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-support 37.0.0",
  "frame-system 37.1.0",
  "hex-literal 0.3.4",
@@ -10270,7 +10385,7 @@ dependencies = [
  "log",
  "num_enum 0.5.11",
  "pallet-balances 38.0.0",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-timestamp 36.0.0",
  "parity-scale-codec",
  "paste",
@@ -10290,8 +10405,8 @@ name = "pallet-evm-precompile-collective"
 version = "0.1.0"
 dependencies = [
  "derive_more",
- "evm",
- "fp-evm",
+ "evm 0.41.1 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-support 37.0.0",
  "frame-system 37.1.0",
  "hex-literal 0.3.4",
@@ -10299,7 +10414,7 @@ dependencies = [
  "num_enum 0.5.11",
  "pallet-balances 38.0.0",
  "pallet-collective",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-timestamp 36.0.0",
  "pallet-treasury",
  "parity-scale-codec",
@@ -10322,7 +10437,7 @@ name = "pallet-evm-precompile-conviction-voting"
 version = "0.1.0"
 dependencies = [
  "derive_more",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-support 37.0.0",
  "frame-system 37.1.0",
  "hex-literal 0.3.4",
@@ -10330,7 +10445,7 @@ dependencies = [
  "num_enum 0.5.11",
  "pallet-balances 38.0.0",
  "pallet-conviction-voting",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-timestamp 36.0.0",
  "parity-scale-codec",
  "precompile-utils 0.1.1",
@@ -10353,14 +10468,14 @@ dependencies = [
  "cumulus-primitives-parachain-inherent 0.15.0",
  "cumulus-test-relay-sproof-builder 0.15.0",
  "derive_more",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-support 37.0.0",
  "frame-system 37.1.0",
  "log",
  "num_enum 0.5.11",
  "pallet-balances 38.0.0",
  "pallet-crowdloan-rewards",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-message-queue 40.0.0",
  "pallet-scheduler",
  "pallet-timestamp 36.0.0",
@@ -10381,9 +10496,9 @@ name = "pallet-evm-precompile-dispatch"
 version = "2.0.0-dev"
 source = "git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2#7f424fb9fc1ca9158a59be54cb183beaff9f799a"
 dependencies = [
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2)",
  "frame-support 28.0.0",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2)",
  "parity-scale-codec",
  "sp-runtime 31.0.1",
 ]
@@ -10394,8 +10509,8 @@ version = "0.1.0"
 dependencies = [
  "cumulus-primitives-core 0.15.0",
  "derive_more",
- "evm",
- "fp-evm",
+ "evm 0.41.1 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-support 37.0.0",
  "frame-system 37.1.0",
  "hex",
@@ -10405,7 +10520,7 @@ dependencies = [
  "orml-traits",
  "orml-xtokens",
  "pallet-balances 38.0.0",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-timestamp 36.0.0",
  "pallet-xcm 16.0.0",
  "parity-scale-codec",
@@ -10430,15 +10545,15 @@ name = "pallet-evm-precompile-identity"
 version = "0.1.0"
 dependencies = [
  "enumflags2",
- "evm",
- "fp-evm",
+ "evm 0.41.1 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-support 37.0.0",
  "frame-system 37.1.0",
  "hex",
  "hex-literal 0.3.4",
  "log",
  "pallet-balances 38.0.0",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-identity",
  "pallet-timestamp 36.0.0",
  "parity-scale-codec",
@@ -10457,7 +10572,7 @@ name = "pallet-evm-precompile-modexp"
 version = "2.0.0-dev"
 source = "git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2#7f424fb9fc1ca9158a59be54cb183beaff9f799a"
 dependencies = [
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2)",
  "num",
 ]
 
@@ -10466,13 +10581,13 @@ name = "pallet-evm-precompile-parachain-staking"
 version = "1.0.0"
 dependencies = [
  "derive_more",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-support 37.0.0",
  "frame-system 37.1.0",
  "log",
  "num_enum 0.5.11",
  "pallet-balances 38.0.0",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-parachain-staking",
  "pallet-timestamp 36.0.0",
  "parity-scale-codec",
@@ -10493,14 +10608,14 @@ name = "pallet-evm-precompile-preimage"
 version = "0.1.0"
 dependencies = [
  "derive_more",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-support 37.0.0",
  "frame-system 37.1.0",
  "hex-literal 0.3.4",
  "log",
  "num_enum 0.5.11",
  "pallet-balances 38.0.0",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-preimage",
  "pallet-timestamp 36.0.0",
  "parity-scale-codec",
@@ -10520,15 +10635,15 @@ name = "pallet-evm-precompile-proxy"
 version = "0.1.0"
 dependencies = [
  "derive_more",
- "evm",
- "fp-evm",
+ "evm 0.41.1 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-support 37.0.0",
  "frame-system 37.1.0",
  "hex-literal 0.3.4",
  "log",
  "num_enum 0.5.11",
  "pallet-balances 38.0.0",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-proxy",
  "pallet-timestamp 36.0.0",
  "parity-scale-codec",
@@ -10548,7 +10663,7 @@ name = "pallet-evm-precompile-randomness"
 version = "0.1.0"
 dependencies = [
  "derive_more",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-support 37.0.0",
  "frame-system 37.1.0",
  "hex-literal 0.3.4",
@@ -10557,7 +10672,7 @@ dependencies = [
  "num_enum 0.5.11",
  "pallet-author-mapping",
  "pallet-balances 38.0.0",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-randomness",
  "pallet-scheduler",
  "pallet-timestamp 36.0.0",
@@ -10576,14 +10691,14 @@ name = "pallet-evm-precompile-referenda"
 version = "0.1.0"
 dependencies = [
  "derive_more",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-support 37.0.0",
  "frame-system 37.1.0",
  "hex-literal 0.3.4",
  "log",
  "num_enum 0.5.11",
  "pallet-balances 38.0.0",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-preimage",
  "pallet-referenda",
  "pallet-scheduler",
@@ -10605,13 +10720,13 @@ name = "pallet-evm-precompile-registry"
 version = "0.1.0"
 dependencies = [
  "derive_more",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-support 37.0.0",
  "frame-system 37.1.0",
  "hex-literal 0.3.4",
  "log",
  "pallet-balances 38.0.0",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-scheduler",
  "pallet-timestamp 36.0.0",
  "parity-scale-codec",
@@ -10631,7 +10746,7 @@ dependencies = [
  "cumulus-pallet-parachain-system",
  "cumulus-primitives-core 0.15.0",
  "derive_more",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-support 37.0.0",
  "frame-system 37.1.0",
  "hex-literal 0.3.4",
@@ -10639,7 +10754,7 @@ dependencies = [
  "num_enum 0.5.11",
  "orml-traits",
  "pallet-balances 38.0.0",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-message-queue 40.0.0",
  "pallet-staking 37.0.0",
  "pallet-timestamp 36.0.0",
@@ -10666,13 +10781,13 @@ version = "0.1.0"
 dependencies = [
  "cumulus-pallet-parachain-system",
  "cumulus-primitives-core 0.15.0",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-support 37.0.0",
  "frame-system 37.1.0",
  "hex",
  "moonbeam-runtime-common",
  "pallet-balances 38.0.0",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-precompile-benchmarks",
  "pallet-relay-storage-roots",
  "pallet-timestamp 36.0.0",
@@ -10691,7 +10806,7 @@ name = "pallet-evm-precompile-sha3fips"
 version = "2.0.0-dev"
 source = "git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2#7f424fb9fc1ca9158a59be54cb183beaff9f799a"
 dependencies = [
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2)",
  "tiny-keccak",
 ]
 
@@ -10700,7 +10815,7 @@ name = "pallet-evm-precompile-simple"
 version = "2.0.0-dev"
 source = "git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2#7f424fb9fc1ca9158a59be54cb183beaff9f799a"
 dependencies = [
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2)",
  "ripemd",
  "sp-io 30.0.0",
 ]
@@ -10710,10 +10825,10 @@ name = "pallet-evm-precompile-storage-cleaner"
 version = "0.1.0"
 source = "git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2#7f424fb9fc1ca9158a59be54cb183beaff9f799a"
 dependencies = [
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2)",
  "frame-support 28.0.0",
  "frame-system 28.0.0",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2)",
  "parity-scale-codec",
  "precompile-utils 0.1.0",
  "sp-core 28.0.0",
@@ -10727,13 +10842,13 @@ version = "0.1.0"
 source = "git+https://github.com/Moonsong-Labs/moonkit?branch=moonbeam-polkadot-v1.7.2#04d420f376a1445c6636926c87485519a1db3fe1"
 dependencies = [
  "cumulus-primitives-core 0.7.0",
- "evm",
- "fp-evm",
+ "evm 0.41.1 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
+ "fp-evm 3.0.0-dev (git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2)",
  "frame-support 28.0.0",
  "frame-system 28.0.0",
  "log",
  "num_enum 0.7.3",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2)",
  "pallet-xcm 7.0.0",
  "precompile-utils 0.1.0",
  "sp-core 28.0.0",
@@ -10750,15 +10865,15 @@ version = "0.2.0"
 dependencies = [
  "cumulus-primitives-core 0.15.0",
  "derive_more",
- "evm",
- "fp-evm",
+ "evm 0.41.1 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-support 37.0.0",
  "frame-system 37.1.0",
  "log",
  "num_enum 0.5.11",
  "orml-traits",
  "pallet-balances 38.0.0",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-timestamp 36.0.0",
  "pallet-xcm 16.0.0",
  "pallet-xcm-transactor",
@@ -10785,13 +10900,13 @@ version = "0.1.0"
 dependencies = [
  "cumulus-primitives-core 0.15.0",
  "derive_more",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-support 37.0.0",
  "frame-system 37.1.0",
  "num_enum 0.5.11",
  "orml-traits",
  "pallet-balances 38.0.0",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-timestamp 36.0.0",
  "pallet-xcm 16.0.0",
  "parity-scale-codec",
@@ -10817,7 +10932,7 @@ version = "0.1.0"
 dependencies = [
  "cumulus-primitives-core 0.15.0",
  "derive_more",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-support 37.0.0",
  "frame-system 37.1.0",
  "log",
@@ -10825,7 +10940,7 @@ dependencies = [
  "orml-traits",
  "orml-xtokens",
  "pallet-balances 38.0.0",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-timestamp 36.0.0",
  "pallet-xcm 16.0.0",
  "parity-scale-codec",
@@ -10850,7 +10965,7 @@ name = "pallet-evm-precompileset-assets-erc20"
 version = "0.1.0"
 dependencies = [
  "derive_more",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-support 37.0.0",
  "frame-system 37.1.0",
  "hex-literal 0.3.4",
@@ -10859,7 +10974,7 @@ dependencies = [
  "num_enum 0.5.11",
  "pallet-assets",
  "pallet-balances 38.0.0",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-timestamp 36.0.0",
  "parity-scale-codec",
  "paste",
@@ -11082,7 +11197,7 @@ dependencies = [
  "log",
  "pallet-assets",
  "pallet-balances 38.0.0",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-scheduler",
  "pallet-timestamp 36.0.0",
  "parity-scale-codec",
@@ -13830,15 +13945,15 @@ version = "0.1.0"
 source = "git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2#7f424fb9fc1ca9158a59be54cb183beaff9f799a"
 dependencies = [
  "environmental",
- "evm",
- "fp-evm",
+ "evm 0.41.1 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
+ "fp-evm 3.0.0-dev (git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2)",
  "frame-support 28.0.0",
  "frame-system 28.0.0",
  "hex",
  "impl-trait-for-tuples",
  "log",
  "num_enum 0.7.3",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/moonbeam-foundation/frontier?branch=moonbeam-polkadot-v1.7.2)",
  "parity-scale-codec",
  "precompile-utils-macro 0.1.0",
  "sp-core 28.0.0",
@@ -13856,8 +13971,8 @@ dependencies = [
  "affix",
  "derive_more",
  "environmental",
- "evm",
- "fp-evm",
+ "evm 0.41.1 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-support 37.0.0",
  "frame-system 37.1.0",
  "hex",
@@ -13865,7 +13980,7 @@ dependencies = [
  "impl-trait-for-tuples",
  "log",
  "num_enum 0.5.11",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "parity-scale-codec",
  "paste",
  "precompile-utils-macro 0.1.1",
@@ -13900,7 +14015,7 @@ name = "precompile-utils-macro"
 version = "0.1.1"
 dependencies = [
  "case",
- "fp-evm",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-support 37.0.0",
  "macrotest",
  "num_enum 0.5.11",
@@ -13920,13 +14035,13 @@ name = "precompile-utils-tests-external"
 version = "0.1.0"
 dependencies = [
  "derive_more",
- "evm",
- "fp-evm",
+ "evm 0.41.1 (git+https://github.com/moonbeam-foundation/evm?branch=moonbeam-polkadot-v1.7.2)",
+ "fp-evm 3.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "frame-support 37.0.0",
  "frame-system 37.1.0",
  "hex-literal 0.3.4",
  "pallet-balances 38.0.0",
- "pallet-evm",
+ "pallet-evm 6.0.0-dev (git+https://github.com/OpenZeppelin/frontier?branch=polkadot-stable2407-1)",
  "pallet-timestamp 36.0.0",
  "parity-scale-codec",
  "precompile-utils 0.1.1",

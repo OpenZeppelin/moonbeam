@@ -242,13 +242,13 @@ evm = { git = "https://github.com/moonbeam-foundation/evm", branch = "moonbeam-p
 evm-gasometer = { git = "https://github.com/moonbeam-foundation/evm", branch = "moonbeam-polkadot-v1.7.2", default-features = false }
 evm-runtime = { git = "https://github.com/moonbeam-foundation/evm", branch = "moonbeam-polkadot-v1.7.2", default-features = false }
 fp-ethereum = { git = "https://github.com/moonbeam-foundation/frontier", branch = "moonbeam-polkadot-v1.7.2", default-features = false }
-fp-evm = { git = "https://github.com/moonbeam-foundation/frontier", branch = "moonbeam-polkadot-v1.7.2", default-features = false }
+fp-evm = { git = "https://github.com/OpenZeppelin/frontier", branch = "polkadot-stable2407-1", default-features = false }
 fp-rpc = { git = "https://github.com/moonbeam-foundation/frontier", branch = "moonbeam-polkadot-v1.7.2", default-features = false }
 fp-self-contained = { git = "https://github.com/moonbeam-foundation/frontier", branch = "moonbeam-polkadot-v1.7.2", default-features = false }
 pallet-ethereum = { git = "https://github.com/moonbeam-foundation/frontier", branch = "moonbeam-polkadot-v1.7.2", default-features = false, features = [
 	"forbid-evm-reentrancy",
 ] }
-pallet-evm = { git = "https://github.com/moonbeam-foundation/frontier", branch = "moonbeam-polkadot-v1.7.2", default-features = false, features = [
+pallet-evm = { git = "https://github.com/OpenZeppelin/frontier", branch = "polkadot-stable2407-1", default-features = false, features = [
 	"forbid-evm-reentrancy",
 ] }
 pallet-evm-chain-id = { git = "https://github.com/moonbeam-foundation/frontier", branch = "moonbeam-polkadot-v1.7.2", default-features = false }

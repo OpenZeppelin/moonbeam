@@ -40,7 +40,7 @@ pub mod pallet {
 	use crate::erc20_matcher::*;
 	use crate::errors::*;
 	use crate::xcm_holding_ext::*;
-	use ethereum_types::{BigEndianHash, H160, H256, U256};
+	use ethereum_types::{H160, H256, U256};
 	use fp_evm::{ExitReason, ExitSucceed};
 	use frame_support::pallet_prelude::*;
 	use pallet_evm::{GasWeightMapping, Runner};
@@ -95,6 +95,7 @@ pub mod pallet {
 		}
 		pub fn weight_of_erc20_transfer(asset_id: &AssetId) -> Weight {
 			T::GasWeightMapping::gas_to_weight(Self::gas_limit_of_erc20_transfer(asset_id), true)
+				.ref_time()
 				.into()
 		}
 		fn erc20_transfer(
@@ -110,8 +111,7 @@ pub mod pallet {
 			// append receiver address
 			input.extend_from_slice(H256::from(to).as_bytes());
 			// append amount to be transferred
-			let mut amount_bytes = [0u8; 32];
-			amount.to_big_endian(&mut amount_bytes);
+			let amount_bytes = amount.to_big_endian();
 			input.extend_from_slice(&amount_bytes);
 
 			let weight_limit = T::GasWeightMapping::gas_to_weight(gas_limit, true);
@@ -143,9 +143,7 @@ pub mod pallet {
 			);
 
 			// return value is true.
-			let mut bytes = [0u8; 32];
-			// TODO: use this for bytes
-			U256::from(1).to_big_endian();
+			let bytes = U256::from(1).to_big_endian();
 
 			// Check return value to make sure not calling on empty contracts.
 			ensure!(

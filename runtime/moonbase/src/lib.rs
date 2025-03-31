@@ -1078,7 +1078,8 @@ impl InstanceFilter<RuntimeCall> for ProxyType {
 						| RuntimeCall::OpenTechCommitteeCollective(..)
 						| RuntimeCall::Identity(..)
 						| RuntimeCall::Utility(..)
-						| RuntimeCall::Proxy(..) | RuntimeCall::AuthorMapping(..)
+						| RuntimeCall::Proxy(..)
+						| RuntimeCall::AuthorMapping(..)
 						| RuntimeCall::CrowdloanRewards(
 							pallet_crowdloan_rewards::Call::claim { .. }
 						)

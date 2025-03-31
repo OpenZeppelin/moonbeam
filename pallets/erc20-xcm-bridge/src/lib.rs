@@ -40,12 +40,12 @@ pub mod pallet {
 	use crate::erc20_matcher::*;
 	use crate::errors::*;
 	use crate::xcm_holding_ext::*;
-	use ethereum_types::BigEndianHash;
+	use ethereum_types::{BigEndianHash, H160, H256, U256};
 	use fp_evm::{ExitReason, ExitSucceed};
 	use frame_support::pallet_prelude::*;
 	use pallet_evm::{GasWeightMapping, Runner};
-	use sp_core::{H160, H256, U256};
 	use sp_std::vec::Vec;
+	use sp_weights::Weight;
 	use xcm::latest::{
 		Asset, AssetId, Error as XcmError, Junction, Location, Result as XcmResult, XcmContext,
 	};
@@ -95,6 +95,7 @@ pub mod pallet {
 		}
 		pub fn weight_of_erc20_transfer(asset_id: &AssetId) -> Weight {
 			T::GasWeightMapping::gas_to_weight(Self::gas_limit_of_erc20_transfer(asset_id), true)
+				.into()
 		}
 		fn erc20_transfer(
 			erc20_contract_address: H160,
@@ -109,9 +110,11 @@ pub mod pallet {
 			// append receiver address
 			input.extend_from_slice(H256::from(to).as_bytes());
 			// append amount to be transferred
-			input.extend_from_slice(H256::from_uint(&amount).as_bytes());
+			let mut amount_bytes = [0u8; 32];
+			amount.to_big_endian(&mut amount_bytes);
+			input.extend_from_slice(&amount_bytes);
 
-			let weight_limit: Weight = T::GasWeightMapping::gas_to_weight(gas_limit, true);
+			let weight_limit = T::GasWeightMapping::gas_to_weight(gas_limit, true);
 
 			let exec_info = T::EvmRunner::call(
 				from,
@@ -141,7 +144,8 @@ pub mod pallet {
 
 			// return value is true.
 			let mut bytes = [0u8; 32];
-			U256::from(1).to_big_endian(&mut bytes);
+			// TODO: use this for bytes
+			U256::from(1).to_big_endian();
 
 			// Check return value to make sure not calling on empty contracts.
 			ensure!(

@@ -238,7 +238,7 @@ substrate-wasm-builder = { git = "https://github.com/paritytech/polkadot-sdk", b
 substrate-rpc-client = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412" }
 
 # Frontier (wasm)
-ethereum = { git = "https://github.com/OpenZeppelin/ethereum.git", branch = "master", default-features = false, features = ["with-scale"] }
+ethereum = { git = "https://github.com/rust-ethereum/ethereum", rev = "3be0d8fd4c2ad1ba216b69ef65b9382612efc8ba", default-features = false, features = ["with-scale"] }
 ethereum-types = { version = "0.15.1", default-features = false }
 evm = { git = "https://github.com/moonbeam-foundation/evm", branch = "moonbeam-polkadot-stable2409", default-features = false }
 evm-gasometer = { git = "https://github.com/moonbeam-foundation/evm", branch = "moonbeam-polkadot-stable2409", default-features = false }

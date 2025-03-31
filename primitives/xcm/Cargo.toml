@@ -1,46 +1,45 @@
 [package]
 name = "xcm-primitives"
-authors = { workspace = true }
+authors = ["PureStake"]
 edition = "2021"
 homepage = "https://moonbeam.network"
 license = "GPL-3.0-only"
-repository = { workspace = true }
+repository = "https://github.com/PureStake/moonbeam"
 version = "0.1.1"
 
 [package.metadata.docs.rs]
 targets = [ "x86_64-unknown-linux-gnu" ]
 
 [dependencies]
-# TODO: replace with ethereum fork usage
-ethereum = { workspace = true, features = [ "with-scale" ] }
-ethereum-types = { workspace = true }
-hex = { workspace = true }
-impl-trait-for-tuples = { workspace = true }
-log = { workspace = true }
-serde = { workspace = true, optional = true, features = [ "derive" ] }
-sha3 = { workspace = true }
+ethereum = { git = "https://github.com/rust-ethereum/ethereum", rev = "3be0d8fd4c2ad1ba216b69ef65b9382612efc8ba", default-features = false, features = ["with-scale"] }
+ethereum-types = { version = "0.15.1", default-features = false }
+hex = { version = "0.4.3", default-features = false }
+impl-trait-for-tuples = "0.2.2"
+log = { version = "0.4.21", default-features = false }
+serde = { version = "1.0.197", default-features = false, optional = true, features = [ "derive" ] }
+sha3 = { version = "0.10", default-features = false }
 
 # Substrate
-frame-support = { workspace = true }
-frame-system = { workspace = true }
-pallet-staking = { workspace = true }
-parity-scale-codec = { workspace = true, features = [ "derive" ] }
-scale-info = { workspace = true, features = [ "derive" ] }
-sp-io = { workspace = true }
-sp-runtime = { workspace = true }
-sp-std = { workspace = true }
+frame-support = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
+frame-system = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
+pallet-staking = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
+parity-scale-codec = { version = "3.6.5", default-features = false, features = [ "derive" ] }
+scale-info = { version = "2.10.0", default-features = false, features = [ "derive" ] }
+sp-io = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
+sp-runtime = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
+sp-std = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
 
 # Cumulus
-cumulus-primitives-core = { workspace = true }
+cumulus-primitives-core = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
 
 # Polkadot / XCM
-polkadot-runtime-common = { workspace = true }
-xcm = { workspace = true }
-xcm-builder = { workspace = true }
-xcm-executor = { workspace = true }
+polkadot-runtime-common = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
+xcm = { package = "staging-xcm", git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
+xcm-builder = { package = "staging-xcm-builder", git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
+xcm-executor = { package = "staging-xcm-executor", git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
 
 # Benchmarks
-frame-benchmarking = { workspace = true, optional = true }
+frame-benchmarking = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false, optional = true }
 
 [features]
 default = [ "std" ]

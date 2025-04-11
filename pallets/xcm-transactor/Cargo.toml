@@ -1,43 +1,43 @@
 [package]
 name = "pallet-xcm-transactor"
-authors = { workspace = true }
+authors = ["PureStake"]
 edition = "2021"
 version = "0.2.0"
 
 [dependencies]
-log = { version = "0.4", default-features = false }
-serde = { workspace = true }
+log = { version = "0.4.21", default-features = false }
+serde = { version = "1.0.197", default-features = false }
 
 # Moonbeam
-xcm-primitives = { workspace = true }
+xcm-primitives = { path = "../../primitives/xcm", default-features = false }
 
 # Substrate
-frame-support = { workspace = true }
-frame-system = { workspace = true }
-parity-scale-codec = { workspace = true, features = [ "derive" ] }
-scale-info = { workspace = true, features = [ "derive" ] }
-sp-io = { workspace = true }
-sp-runtime = { workspace = true }
-sp-std = { workspace = true }
+frame-support = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
+frame-system = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
+parity-scale-codec = { version = "3.6.5", default-features = false, features = [ "derive" ] }
+scale-info = { version = "2.10.0", default-features = false, features = [ "derive" ] }
+sp-io = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
+sp-runtime = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
+sp-std = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
 
 # Cumulus
-cumulus-primitives-core = { workspace = true }
+cumulus-primitives-core = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
 
 # Polkadot / XCM
-xcm = { workspace = true }
-xcm-builder = { workspace = true }
-xcm-executor = { workspace = true }
+xcm = { package = "staging-xcm", git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
+xcm-builder = { package = "staging-xcm-builder", git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
+xcm-executor = { package = "staging-xcm-executor", git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
 
 # Benchmarks
-frame-benchmarking = { workspace = true, optional = true }
+frame-benchmarking = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false, optional = true }
 
 [dev-dependencies]
-pallet-balances = { workspace = true, features = [ "insecure_zero_ed", "std" ] }
-pallet-timestamp = { workspace = true, features = [ "std" ] }
-pallet-xcm = { workspace = true, features = [ "std" ] }
-parity-scale-codec = { workspace = true, features = [ "std" ] }
-sp-core = { workspace = true, features = [ "std" ] }
-sp-runtime = { workspace = true }
+pallet-balances = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", features = [ "insecure_zero_ed", "std" ] }
+pallet-timestamp = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", features = [ "std" ] }
+pallet-xcm = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", features = [ "std" ] }
+parity-scale-codec = { version = "3.6.5", features = [ "std" ] }
+sp-core = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", features = [ "std" ] }
+sp-runtime = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412" }
 
 [features]
 default = [ "std" ]

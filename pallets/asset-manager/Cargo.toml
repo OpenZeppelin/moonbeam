@@ -1,34 +1,34 @@
 [package]
 name = "pallet-asset-manager"
-authors = { workspace = true }
+authors = ["PureStake"]
 edition = "2021"
 version = "0.1.0"
 
 [dependencies]
-log = { workspace = true }
-serde = { workspace = true, optional = true }
+log = { version = "0.4.21", default-features = false }
+serde = { version = "1.0.197", default-features = false, optional = true }
 
 # Moonbeam
-xcm-primitives = { workspace = true }
+xcm-primitives = { path = "../../primitives/xcm", default-features = false }
 
 # Substrate
-frame-support = { workspace = true }
-frame-system = { workspace = true }
-parity-scale-codec = { workspace = true, features = [ "derive" ] }
-scale-info = { workspace = true, features = [ "derive" ] }
-sp-io = { workspace = true }
-sp-runtime = { workspace = true }
-sp-std = { workspace = true }
+frame-support = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
+frame-system = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
+parity-scale-codec = { version = "3.6.5", default-features = false, features = [ "derive" ] }
+scale-info = { version = "2.10.0", default-features = false, features = [ "derive" ] }
+sp-io = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
+sp-runtime = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
+sp-std = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
 
 # Polkadot
-xcm = { workspace = true }
+xcm = { package = "staging-xcm", git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
 
 # Benchmarks
-frame-benchmarking = { workspace = true, optional = true }
+frame-benchmarking = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false, optional = true }
 
 [dev-dependencies]
-pallet-balances = { workspace = true, features = [ "insecure_zero_ed", "std" ] }
-sp-core = { workspace = true, features = [ "std" ] }
+pallet-balances = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", features = [ "insecure_zero_ed", "std" ] }
+sp-core = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", features = [ "std" ] }
 
 [features]
 default = [ "std" ]

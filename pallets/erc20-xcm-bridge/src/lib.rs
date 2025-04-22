@@ -95,8 +95,6 @@ pub mod pallet {
 		}
 		pub fn weight_of_erc20_transfer(asset_id: &AssetId) -> Weight {
 			T::GasWeightMapping::gas_to_weight(Self::gas_limit_of_erc20_transfer(asset_id), true)
-				.ref_time()
-				.into()
 		}
 		fn erc20_transfer(
 			erc20_contract_address: H160,

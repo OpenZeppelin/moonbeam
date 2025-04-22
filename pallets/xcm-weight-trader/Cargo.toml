@@ -9,28 +9,28 @@ version = "0.1.0"
 log = { version = "0.4.21", default-features = false }
 
 # Substrate
-frame-support = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
-frame-system = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
-pallet-balances = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
+frame-support = { git = "https://github.com/paritytech/polkadot-sdk", rev = "110d90bb85f866cc757287526022a66f3d576524", default-features = false }
+frame-system = { git = "https://github.com/paritytech/polkadot-sdk", rev = "110d90bb85f866cc757287526022a66f3d576524", default-features = false }
+pallet-balances = { git = "https://github.com/paritytech/polkadot-sdk", rev = "110d90bb85f866cc757287526022a66f3d576524", default-features = false }
 parity-scale-codec = { version = "3.6.5", default-features = false }
 scale-info = { version = "2.10.0", default-features = false, features = ["derive"] }
-sp-core = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
-sp-io = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
-sp-runtime = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
-sp-std = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
+sp-core = { git = "https://github.com/paritytech/polkadot-sdk", rev = "110d90bb85f866cc757287526022a66f3d576524", default-features = false }
+sp-io = { git = "https://github.com/paritytech/polkadot-sdk", rev = "110d90bb85f866cc757287526022a66f3d576524", default-features = false }
+sp-runtime = { git = "https://github.com/paritytech/polkadot-sdk", rev = "110d90bb85f866cc757287526022a66f3d576524", default-features = false }
+sp-std = { git = "https://github.com/paritytech/polkadot-sdk", rev = "110d90bb85f866cc757287526022a66f3d576524", default-features = false }
 
 # Polkadot
-xcm = { package = "staging-xcm", git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
-xcm-executor = { package = "staging-xcm-executor", git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
-xcm-runtime-apis = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false }
+xcm = { package = "staging-xcm", git = "https://github.com/paritytech/polkadot-sdk", rev = "110d90bb85f866cc757287526022a66f3d576524", default-features = false }
+xcm-executor = { package = "staging-xcm-executor", git = "https://github.com/paritytech/polkadot-sdk", rev = "110d90bb85f866cc757287526022a66f3d576524", default-features = false }
+xcm-runtime-apis = { git = "https://github.com/paritytech/polkadot-sdk", rev = "110d90bb85f866cc757287526022a66f3d576524", default-features = false }
 
 # Benchmarks
-frame-benchmarking = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", default-features = false, optional = true }
+frame-benchmarking = { git = "https://github.com/paritytech/polkadot-sdk", rev = "110d90bb85f866cc757287526022a66f3d576524", default-features = false, optional = true }
 
 [dev-dependencies]
-frame-benchmarking = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", features = ["std"] }
-pallet-balances = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", features = ["std", "insecure_zero_ed"] }
-sp-tracing = { git = "https://github.com/paritytech/polkadot-sdk", branch = "stable2412", features = ["std"] }
+frame-benchmarking = { git = "https://github.com/paritytech/polkadot-sdk", rev = "110d90bb85f866cc757287526022a66f3d576524", features = ["std"] }
+pallet-balances = { git = "https://github.com/paritytech/polkadot-sdk", rev = "110d90bb85f866cc757287526022a66f3d576524", features = ["std", "insecure_zero_ed"] }
+sp-tracing = { git = "https://github.com/paritytech/polkadot-sdk", rev = "110d90bb85f866cc757287526022a66f3d576524", features = ["std"] }
 
 [features]
 default = ["std"]

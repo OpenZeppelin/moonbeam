@@ -190,7 +190,7 @@ default = [
 	"westend-native",
 ]
 
-lazy-loading = ["sc-service/test-helpers", "parking_lot/send_guard"]
+lazy-loading = ["parking_lot/send_guard"]
 
 rococo-native = ["polkadot-cli/rococo-native", "polkadot-service/rococo-native"]
 westend-native = [

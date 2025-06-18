@@ -259,6 +259,7 @@ pub mod pallet {
 		Clone,
 		Encode,
 		Decode,
+		DecodeWithMemTracking,
 		Eq,
 		PartialEq,
 		RuntimeDebug,
